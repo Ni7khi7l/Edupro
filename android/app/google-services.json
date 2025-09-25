@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "285056131909",
+    "project_id": "edupro-app-daa1b",
+    "storage_bucket": "edupro-app-daa1b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285056131909:android:0cec32467103ff93c4d42c",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJjHw6ppVJ6zn2P-bEv4dVBFNvdDtGxYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
