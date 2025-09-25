@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/category/pages/categories.dart';
 import 'package:flutter_application_1/features/category/pages/home_page.dart';
 import 'package:flutter_application_1/features/category/providers/categories_provider.dart';
 import 'package:flutter_application_1/features/core/enum.dart';
@@ -54,7 +55,7 @@ class _CategoryState extends State<Category> {
                     children: [
                       InkWell(
                         onTap: () {
-                          MaterialPageRoute(builder: (_) => HomePage());
+                          Navigator.pop(context);
                         },
                         child: Icon(Icons.arrow_back),
                       ),
@@ -253,25 +254,20 @@ class _CategoryState extends State<Category> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        String? category = _category.text.trim();
-                        String? rating = _rating.text.trim();
-                        String? title = _title.text.trim();
-                        String? classes = _classes.text.trim();
-                        String? durationHours = _durationHours.text.trim();
-                        String? price = _price.text.trim();
-                        String? tab = _tab.text.trim();
-                        String? conclusion = _conclusion.text.trim();
-
-                        provider.addCategories(
-                          category,
-                          rating,
-                          title,
-                          classes,
-                          durationHours,
-                          price,
-                          tab,
-                          conclusion,
+                        Categories categories = Categories(
+                          category: _category.text.trim(),
+                          rating: double.tryParse(_rating.text.trim()),
+                          title: _title.text.trim(),
+                          classes: int.tryParse(_classes.text.trim()),
+                          durationHours: int.tryParse(
+                            _durationHours.text.trim(),
+                          ),
+                          price: int.tryParse(_price.text.trim()),
+                          tab: _tab.text.trim(),
+                          conclusion: _conclusion.text.trim(),
                         );
+
+                        provider.addCategories(categories);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/category/pages/categories.dart';
 import 'package:flutter_application_1/features/core/enum.dart';
 
 class CategoriesProvider with ChangeNotifier {
@@ -12,33 +13,12 @@ class CategoriesProvider with ChangeNotifier {
 
   String? errorMessage;
 
-  Future<void> addCategories(
-    String category,
-    String rating,
-    String title,
-    String classes,
-    String durationHours,
-    String price,
-    String tab,
-    String conclusion,
-  ) async {
+  Future<void> addCategories(Categories categories) async {
     _statusUtils = StatusUtils.loading;
     notifyListeners();
 
     try {
-      final data = {
-        "category": category,
-        "rating": rating,
-        "title": title,
-        "classes": classes,
-        "duration hours": durationHours,
-        "price": price,
-        "tab": tab,
-        "conclusion": conclusion,
-      };
-      print(data);
-
-      await _firebaseStore.collection("addCategory").add(data);
+      await _firebaseStore.collection("addCategory").add(categories.toJson());
       _statusUtils = StatusUtils.sucess;
       notifyListeners();
     } catch (e) {
