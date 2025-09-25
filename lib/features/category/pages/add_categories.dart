@@ -85,7 +85,7 @@ class _CategoryState extends State<Category> {
                   ),
                   SizedBox(height: 2),
                   CustomTextFormField(
-                    hintText: "Graphic Design",
+                    hintText: "Graphic Designnnnnn",
                     hintStyle: TextStyle(color: Colors.black87),
                     border: OutlineInputBorder(),
                     decoration: InputDecoration(),
