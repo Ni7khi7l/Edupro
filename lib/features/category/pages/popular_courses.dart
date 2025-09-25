@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/category/pages/categories.dart';
+import 'package:flutter_application_1/features/category/pages/coure_detail.dart';
 import 'package:flutter_application_1/features/category/providers/categories_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -125,97 +127,118 @@ class _PopularCoursesState extends State<PopularCourses> {
                       final categories = value.categoriesList[index];
                       return Column(
                         children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
-                            child: Container(
-                              height: 120,
-                              width: 350,
-                              color: const Color.fromARGB(255, 244, 247, 249),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: 120,
-                                    color: Colors.black,
-                                    child: Image.network(
-                                      "https://img.freepik.com/premium-vector/vector-man-working-computer-graphic-designing-with-pen-tool_1272652-757.jpg?semt=ais_incoming&w=740&q=80",
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CoureDetail(categories: Categories(
+
+                                    category: categories["category"],
+                                    rating: categories["rating"],
+                                    title: categories["title"],
+                                    classes: categories["classes"],
+                                    durationHours: categories["durationHours"],
+                                    price: categories["price"],
+                                    tab: categories["tab"],
+                                    conclusion: categories["conclusion"]
+                                  ),),
+                                ),
+                              );
+                            },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(16),
+                              child: Container(
+                                height: 120,
+                                width: 350,
+                                color: const Color.fromARGB(255, 244, 247, 249),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: 120,
+                                      color: Colors.black,
+                                      child: Image.network(
+                                        "https://img.freepik.com/premium-vector/vector-man-working-computer-graphic-designing-with-pen-tool_1272652-757.jpg?semt=ais_incoming&w=740&q=80",
+                                      ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Text(
-                                              categories["category"],
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.deepOrangeAccent,
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Text(
+                                                categories["category"],
+                                                style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w500,
+                                                  color:
+                                                      Colors.deepOrangeAccent,
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(width: 60),
-                                            Icon(
-                                              Icons.bookmark_remove,
-                                              color: Colors.green,
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(height: 8),
-                                        Text(
-                                          "Graphic Design Advanced",
-                                          style: TextStyle(
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.bold,
+                                              SizedBox(width: 60),
+                                              Icon(
+                                                Icons.bookmark_remove,
+                                                color: Colors.green,
+                                              ),
+                                            ],
                                           ),
-                                        ),
-                                        Text(
-                                          "7058/-",
-                                          style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.blue,
+                                          SizedBox(height: 8),
+                                          Text(
+                                            "Graphic Design Advanced",
+                                            style: TextStyle(
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
-                                        ),
-                                        SizedBox(height: 4),
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              Icons.star,
-                                              color: Colors.orange,
-                                              size: 16,
+                                          Text(
+                                            "7058/-",
+                                            style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.blue,
                                             ),
-                                            Text(
-                                              "4.2",
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w500,
+                                          ),
+                                          SizedBox(height: 4),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.star,
+                                                color: Colors.orange,
+                                                size: 16,
                                               ),
-                                            ),
-                                            SizedBox(width: 20),
-                                            Text(
-                                              "|",
-                                              style: TextStyle(
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w600,
+                                              Text(
+                                                "4.2",
+                                                style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(width: 20),
-                                            Text(
-                                              "7830 Std",
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w500,
+                                              SizedBox(width: 20),
+                                              Text(
+                                                "|",
+                                                style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                              SizedBox(width: 20),
+                                              Text(
+                                                "7830 Std",
+                                                style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
