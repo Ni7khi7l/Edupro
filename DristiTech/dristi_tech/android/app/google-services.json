@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "580850132245",
+    "project_id": "dhristitech-notes",
+    "storage_bucket": "dhristitech-notes.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580850132245:android:b11248250adc3c5fc0751c",
+        "android_client_info": {
+          "package_name": "com.example.dristi_tech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhddJIh5_suHtSfl-8XMVq1-Ty7q-WJdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
